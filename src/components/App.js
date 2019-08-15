@@ -9,16 +9,29 @@ export default class extends Component {
     fetchTodos().then(todos => this.setState({ todos }))
   }
   addTodo = (title) => {
-    
+    this.setState({ 
+      todos: [
+        ...this.state.todos, { 
+          id: Math.max(...this.state.todos.map(todo => todo.id)) + 1,
+          title: title, 
+          done: false
+        }
+      ] 
+    })
   }
   updateTodo = (id, todos) => {
-     
+    this.setState({ 
+      todos: todos.map(
+        todo => todo.id === id 
+          ? {...todo, done: !todo.done} : todo
+      ) 
+    }) 
   }
   render() {
     return (
       <div>
-        <TodosForm addTodo={this.addTodo} />
-        <TodosList updateTodo={this.updateTodo} todos={this.state.todos} />
+        <TodosForm createTodo={this.addTodo} />
+        <TodosList toggleTodo={this.updateTodo} todos={this.state.todos} />
       </div>
     )
   }
