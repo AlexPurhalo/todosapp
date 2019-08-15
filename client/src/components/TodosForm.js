@@ -1,25 +1,24 @@
 import React, { Component } from 'react'
 
 export default class extends Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     lol: 'ff'
-  //   }
-  // }
   state = {
     value: ''
   }
+  handleInputeChange = (e) => {
+    this.setState({ value: e.target.value })
+  }
+  handleFormSubmit = (e) => {
+    e.preventDefault()
+    this.props.createTodo(this.state.value)
+    this.setState({ value: '' })
+  }
   render() {
     return (
-      <form onSubmit={
-        (e) => { 
-          e.preventDefault()
-          console.log('works!')
-        }}>
-        <input onChange={(e) => console.log(e.target.value)}/>
+      <form onSubmit={this.handleFormSubmit}>
+        <input value={this.state.value} onChange={this.handleInputeChange}/>
         <button>Submit</button>
       </form>
     )
   }
 }
+

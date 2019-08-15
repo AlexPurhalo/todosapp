@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodosForm component renders correct UI 1`] = `ShallowWrapper {}`;

@@ -7,7 +7,7 @@
   "license": "ISC",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "test": "jest"
+    "test": "jest --verbose"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

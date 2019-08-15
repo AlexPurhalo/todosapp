@@ -1,3 +1,4 @@
 client/node_modules
 client/npm-debug.log
 client/dist/bundle.js
+client/coverage/
