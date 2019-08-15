@@ -4,9 +4,9 @@ import TodosList from './TodosList'
 
 describe('TodosList component', () => {
   const todos = [
-    { id: 1, title: 'Call mom',       isDone: false },
-    { id: 2, title: 'Clean the room', isDone: true  },
-    { id: 3, title: 'Watch a movie',  isDone: true  }
+    { id: 1, title: 'Call mom',       done: false },
+    { id: 2, title: 'Clean the room', done: true  },
+    { id: 3, title: 'Watch a movie',  done: true  }
   ]
 
   test('renders correct UI', () => {

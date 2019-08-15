@@ -6,7 +6,7 @@ export default function ({ todos, toggleTodo }) {
       {todos.map(todo => (
         <li onClick={() => toggleTodo(todo.id)} 
             key={todo.id} 
-            style={{textDecoration: todo.isDone ? 'line-through' : ''}}
+            style={{textDecoration: todo.done ? 'line-through' : ''}}
             children={todo.title} />
       ))}
     </ul>
