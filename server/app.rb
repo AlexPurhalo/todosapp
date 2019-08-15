@@ -7,8 +7,9 @@ DB = Sequel.sqlite
 
 DB.create_table :todos do
   primary_ey :id
-  String :title
-  TrueClass :is_done
+
+  String :title, null: false
+  TrueClass :is_done, default: false
 end
 
 todos = DB[:todos]
@@ -28,7 +29,6 @@ class App < Grape::API
 
   params do
     requires :title, type: String
-    requires :is_done, type: Boolean
   end
   post '/todos/' do
     DB[:todos].insert(params)
