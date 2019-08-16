@@ -1,4 +1,4 @@
-export function todos (state=[], action) {
+export function todos (state=[], action={}) {
   switch(action.type) {
     case 'GET_TODOS': 
       return action.todos
