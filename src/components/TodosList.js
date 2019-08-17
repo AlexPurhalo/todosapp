@@ -1,22 +1,15 @@
-import React, { Component } from 'react'
-import { fetchTodos } from '../api/todos'
+import React from 'react'
 
-export default class extends Component {
-  componentDidMount() {
-    fetchTodos().then(todos => this.props.getTodos(todos))
-  }
-  render() {
-    return (
-      <ul>
-          {this.props.todos.map(todo => (
-            <li onClick={() => this.props.toggleTodo(todo.id)} 
-              key={todo.id} 
-              style={{textDecoration: todo.done ? 'line-through' : ''}}
-              children={todo.title} 
-            />
-          ))}
-      </ul>
-    )
-  }
+export default function ({ todos, toggleTodo }) {
+  return (
+    <ul>
+      {todos.map(todo => (
+        <li onClick={() => toggleTodo(todo.id, todos)} 
+            key={todo.id} 
+            style={{textDecoration: todo.done ? 'line-through' : ''}}
+            children={todo.title} />
+      ))}
+    </ul>
+  )
 }
 

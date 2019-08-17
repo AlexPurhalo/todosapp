@@ -2,6 +2,7 @@ import { connect  } from 'react-redux'
 import TodosForm from './components/TodosForm'
 import TodosList from './components/TodosList'
 import { addTodo, updateTodo, fetchTodos } from './actions' 
+import withTodos from './hocs/withTodos'
 
 export const TodosFormContainer = connect(
   null,
@@ -14,5 +15,4 @@ export const TodosListContainer = connect(
     toggleTodo(id)  { dispatch(updateTodo(id))    },
     getTodos(todos) { dispatch(fetchTodos(todos)) }
   })
-)(TodosList)
-
+)(withTodos(TodosList))

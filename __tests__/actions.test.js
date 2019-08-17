@@ -1,5 +1,5 @@
-import createStore from './store'
-import { addTodo, updateTodo, fetchTodos } from './actions'
+import createStore from '../src/store'
+import { addTodo, updateTodo, fetchTodos } from '../src/actions'
 
 describe('Action Creators', () => {
   describe('addTodo', () => {

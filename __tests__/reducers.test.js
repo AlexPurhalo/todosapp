@@ -1,4 +1,4 @@
-import { todos } from './reducers'
+import { todos } from '../src/reducers'
 
 describe('todos reducer', () => {
   it('GET_TODOS success', () => {

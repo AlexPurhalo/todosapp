@@ -32,10 +32,15 @@
     "redux": "^4.0.4"
   },
   "jest": {
-    "setupFilesAfterEnv": ["./src/setupTests.js"],
+    "setupFilesAfterEnv": [
+      "./__tests__/setupTests.js"
+    ],
     "verbose": true,
     "collectCoverage": true,
-    "notify": true,
-    "collectCoverageFrom": ["src/**/*.js", "!src/index.js"]
+    "collectCoverageFrom": [
+      "src/**/*.js", 
+      "!src/index.js",
+      "./__tests__/setupTests.js"
+    ]
   }
 }
