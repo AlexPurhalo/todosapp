@@ -33,14 +33,15 @@
   },
   "jest": {
     "setupFilesAfterEnv": [
-      "./__tests__/setupTests.js"
+      "./src/setupTests.js"
     ],
     "verbose": true,
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "src/**/*.js", 
-      "!src/index.js",
-      "./__tests__/setupTests.js"
+      "./src/**/*.js", 
+      "!./src/index.js",
+      "!./src/api/*.js",
+      "!./src/store.js"
     ]
   }
 }

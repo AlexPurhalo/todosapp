@@ -28,7 +28,7 @@ describe('TodosList component', () => {
     const toggleTodo = jest.fn()
     const wrapper = shallow(<TodosList todos={todos} toggleTodo={toggleTodo} />)
     wrapper.find('ul').childAt(0).simulate('click')
-    expect(toggleTodo).toHaveBeenCalledWith(todos[0].id, todos)
+    expect(toggleTodo).toHaveBeenCalledWith(todos[0].id)
   })
 })
 

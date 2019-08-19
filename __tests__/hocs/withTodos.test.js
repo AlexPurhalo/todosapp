@@ -17,7 +17,7 @@ describe('With Todos HOC', () => {
     {id: 3, title: "read a book", done: false}
   ]
   it('calls the callback to get todos while mounting', async () => {
-    const MockComponent = (props) => (<div />)
+    const MockComponent = (props) => <div></div>
     const ComposedComponent = withTodos(MockComponent)
     const getTodos = jest.fn()
     const wrapper = mount(<ComposedComponent getTodos={getTodos} />)
@@ -27,7 +27,7 @@ describe('With Todos HOC', () => {
   it('pipes props to the composed component', () => {
     const MockComponent = (props) => (<div />)
     const ComposedComponent = withTodos(MockComponent)
-    const wrapper = mount(<ComposedComponent todos={todos} />)
+    const wrapper = mount(<ComposedComponent getTodos={jest.fn()} todos={todos} />)
     expect(wrapper.props().todos).toEqual(todos)
   })
 })
