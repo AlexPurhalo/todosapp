@@ -1,4 +1,4 @@
-export function todos (state=[], action={}) {
+export const todos = (state=[], action={}) => {
   switch(action.type) {
     case 'GET_TODOS': 
       return action.todos
@@ -23,3 +23,5 @@ export function todos (state=[], action={}) {
       return state
   }
 }
+
+export default { todos }
