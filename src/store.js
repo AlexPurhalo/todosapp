@@ -1,5 +1,8 @@
-import { compose, applMiddleware, createStore, combineReducers } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
+import { configureStore } from '@reduxjs/toolkit'
+import { combineReducers } from 'redux'
 
-export default (state, reducers) => createStore(combineReducers(reducers), state, composeWithDevTools())
-// TODO: add the store specs
+export const createStore = (reducers) => {
+  const reducer = combineReducers(reducers) 
+  return configureStore({ reducer })
+}
+

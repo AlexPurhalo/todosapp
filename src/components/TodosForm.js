@@ -9,7 +9,7 @@ export default class extends Component {
   }
   handleFormSubmit = (e) => {
     e.preventDefault()
-    this.props.createTodo(this.state.value)
+    this.props.addTodo({ title: this.state.value })
     this.setState({ value: '' })
   }
   render() {
