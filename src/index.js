@@ -5,9 +5,13 @@ import { combineReducers } from 'redux'
 import { configureStore } from '@reduxjs/toolkit'
 import App from './components/App.js'
 import todosReducer from './todosReducer'
+import filterReducer from './filterReducer'
 import { createStore } from './store'
 
-const store = createStore({ todos: todosReducer })
+const store = createStore({ 
+  todos: todosReducer,
+  filter: filterReducer 
+})
 
 ReactDOM.render(
   <Provider store={store}>
