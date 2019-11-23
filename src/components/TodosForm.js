@@ -13,6 +13,7 @@ export default class extends Component {
     this.setState({ value: '' })
   }
   render() {
+    if (this.props.inputIsHidden) return <div />
     return (
       <form onSubmit={this.handleFormSubmit}>
         <input value={this.state.value} onChange={this.handleInputeChange}/>
